@@ -5,6 +5,10 @@
 {% block body %}
 <div class="container">
   <center><img class="materialboxed" width="250" src="{% static 'img/caroling.png' %}"></center>
+  <div>
+    <h4>音楽番組のプレイリストから音楽を発見しよう！</h4>
+    <h6>LINE Musicや公式YouTubeチャンネルのある曲はリンクも載せています。</h6>
+  </div>
   <div class="row">
     {% for title in titles %}
     <a href="{% url 'playlists:title_detail' title.id %}">
