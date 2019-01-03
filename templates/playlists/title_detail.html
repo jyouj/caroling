@@ -32,7 +32,7 @@
         <td>{{ song.turn }}</td>
         <td>{{ song.song_name}}</td>
         <td>{{ song.artist }}</td>
-        {% if not song.youtube == None %}
+        {% if not song.link == None %}
         <td><a href="{{ song.link }}">配信へ</a></td>
         {% endif %}
         {% if not song.youtube == None %}
