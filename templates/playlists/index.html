@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block body %}
 <div class="container">
+  <center><img class="materialboxed" width="250" src="{% static 'img/caroling.png' %}"></center>
   <div class="row">
     {% for title in titles %}
     <a href="{% url 'playlists:title_detail' title.id %}">
@@ -15,6 +18,12 @@
     </div>
     </a>
     {% endfor %}
+  </div>
+  <div class="twitter upup">
+    <center>
+      <a href="https://twitter.com/share?url=https://caroling.herokuapp.com/&text=Caroling&hashtags=プレイリストから音楽を！"
+         class="btn" style="background-color: #42a5f5;"><span><i class="fab fa-twitter"></i></span>ツイッターでシェア</a>
+    </center>
   </div>
 </div>
 

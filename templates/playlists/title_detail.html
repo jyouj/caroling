@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ title.name }} -Caroling{% endblock %}
+
+{% block meta %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@jyouj__">
+<meta name="og:url" content="https://caroling.herokuapp.com/{{ title.id }}">
+<meta name="og:title" content="{{ title.name }} -Caroling">
+<meta name="og:description" content="{{ title.name }}のプレイリストから歌手の曲を探そう！">
+<meta name="og:image" content="https://caroling.herokuapp.com/static/img/caroling.png">
+{% endblock %}
+
 {% block body %}
 <div class="container">
   <div>
     <h3 class="header">{{ title.name }}</h3> <h5><small>{{ title.date }}</small></h5>
+  </div>
   <table class="striped responsive-table">
     <thead>
       <tr>
@@ -28,5 +40,12 @@
     {% endfor %}
     </tbody>
   </table>
+  <br>
+  <div class="twitter upup">
+    <center>
+      <a href="https://twitter.com/share?url=https://caroling.herokuapp.com/{{ title.id }}&text=Caroling&hashtags=プレイリストから音楽を！"
+         class="btn" style="background-color: #42a5f5;"><span><i class="fab fa-twitter"></i></span>{{ title.name }}をシェア</a>
+    </center>
+  </div>
 </div>
 {% endblock %}
