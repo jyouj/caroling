@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Caroling{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    {% block meta %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@jyouj__">
+    <meta name="og:url" content="#">
+    <meta name="og:title" content="Caroling">
+    <meta name="og:description" content="音楽番組のプレイリストから歌手の曲を探そう！">
+    <meta name="og:image" content="#">
+    {% endblock %}
+    <style type="text/css">
+      a { text-decoration:none; }
+      a:link { color : #000000; }
+      a:visited { color : #000000; }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper" style="background-color: #eedcb3;">
+        <a href="{% url 'playlists:index' %}" class="brand-logo center caroling">Caroling</a>
+      </div>
+    </nav>
+
+    <section class="section" style="background-color: #ffb6c1">
+      {% block body %}{% endblock %}
+    </section>
+
+    <footer class="page-footer" style="background-color: #eedcb3;">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="black-text"><a href="https://twitter.com/jyouj__">@jyouj__</a></h5>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="black-text">リンク</h5>
+            <ul>
+              <li><a class="text-lighten-3" href="{% url 'playlists:tellme' %}">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2014 @jyouj__
+        </div>
+      </div>
+    </footer>
+
+    <style>
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+    }
+    .caroling {
+      font-family: cursive;
+    }
+    </style>
+  </body>
+</html>

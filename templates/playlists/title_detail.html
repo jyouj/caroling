@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  <div>
+    <h3 class="header">{{ title.name }}</h3> <h5><small>{{ title.date }}</small></h5>
+  <table class="striped responsive-table">
+    <thead>
+      <tr>
+        <th><span><i class="fas fa-sort-numeric-up"></i></span> 曲順</th>
+        <th><span><i class="fas fa-music"></i></span> 楽曲</th>
+        <th><span><i class="fas fa-female"></i></span> アーティスト</th>
+        <th><span><i class="fas fa-external-link-alt"></i></span> 配信サイト</th>
+        <th><span><i class="fab fa-youtube"></i></span> YouTube</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for song in title.song_set.all %}
+      <tr>
+        <td>{{ song.turn }}</td>
+        <td>{{ song.song_name}}</td>
+        <td>{{ song.artist }}</td>
+        <td><a href="{{ song.link }}">配信へ</a></td>
+        {% if not song.youtube == None %}
+        <td><a href="{{ song.youtube }}">公式チャンネルへ</a></td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
