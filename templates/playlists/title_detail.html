@@ -39,6 +39,8 @@
         {% endif %}
         {% if not song.youtube == None %}
         <td><a href="{{ song.youtube }}">公式チャンネルへ</a></td>
+        {% else %}
+        <td></td>
         {% endif %}
       </tr>
     {% endfor %}
