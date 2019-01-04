@@ -8,7 +8,7 @@
 <meta name="og:url" content="https://caroling.herokuapp.com/{{ title.id }}">
 <meta name="og:title" content="{{ title.name }} -Caroling">
 <meta name="og:description" content="{{ title.name }}のセットリストから曲を探そう！">
-<meta name="og:image" content="https://caroling.herokuapp.com/static/img/caroling.png">
+<meta name="og:image" content="https://caroling.herokuapp.com/static/img/caroling2.jpg">
 {% endblock %}
 
 {% block body %}
@@ -49,7 +49,7 @@
   <br>
   <div class="twitter upup">
     <center>
-      <a href="https://twitter.com/share?url=https://caroling.herokuapp.com/{{ title.id }}&text=Caroling&hashtags=プレイリストから音楽を！"
+      <a href="https://twitter.com/share?url=https://caroling.herokuapp.com/{{ title.id }}&text={{ title.name }}をチェックしよう！&hashtags=プレイリストから音楽を！"
          class="btn" style="background-color: #42a5f5;"><span><i class="fab fa-twitter"></i></span>{{ title.name }}をシェア</a>
     </center>
   </div>
