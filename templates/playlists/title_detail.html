@@ -33,12 +33,12 @@
         <td>{{ song.song_name}}</td>
         <td>{{ song.artist }}</td>
         {% if not song.link == None %}
-        <td><a href="{{ song.link }}">配信へ</a></td>
+        <td><a href="{{ song.link }}"><i class="fas fa-external-link-alt fa-2x"></i></a></td>
         {% else %}
         <td></td>
         {% endif %}
         {% if not song.youtube == None %}
-        <td><a href="{{ song.youtube }}">公式チャンネルへ</a></td>
+        <td><a href="{{ song.youtube }}"><i class="fab fa-youtube fa-2x"></i></a></td>
         {% else %}
         <td></td>
         {% endif %}
@@ -50,7 +50,7 @@
   <div class="twitter upup">
     <center>
       <a href="https://twitter.com/share?url=https://caroling.herokuapp.com/{{ title.id }}&text={{ title.name }}をチェックしよう！&hashtags=プレイリストから音楽を！"
-         class="btn" style="background-color: #42a5f5;"><span><i class="fab fa-twitter"></i></span>{{ title.name }}をシェア</a>
+         class="btn" style="background-color: #d3d3d3;"><span><i class="fab fa-twitter"></i></span> {{ title.name }}をシェア</a>
     </center>
   </div>
 </div>
